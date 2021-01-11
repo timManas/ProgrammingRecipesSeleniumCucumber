@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+/Users/timmanas/ProgrammingProjects/ProgrammingRecipesSeleniumCucumber/.metadata/.plugins/org.eclipse.jdt.core
+768476943.index
