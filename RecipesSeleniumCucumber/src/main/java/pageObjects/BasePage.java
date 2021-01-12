@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utils.DriverFactory;
+import stepDefinitionsX.DriverFactory;
 
 public class BasePage extends DriverFactory {
 	protected WebDriverWait wait;

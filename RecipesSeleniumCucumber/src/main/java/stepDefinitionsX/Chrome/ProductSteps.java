@@ -7,7 +7,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pageObjects.BasePage;
 import pageObjects.Chrome.ProductsPage_Chrome;
-import utils.DriverFactory;
+import stepDefinitionsX.DriverFactory;
 
 public class ProductSteps extends DriverFactory {
 	@Given("^user navigates to \"([^\"]*)\" website$")

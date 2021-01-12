@@ -12,6 +12,4 @@ public class Constants {
 	public final static String IE_DRIVER_DIRECTORY = System.getProperty("user.dir") + "//src//test//java//resources//drivers//IEDriverServer";
 
 
-	
-//	public final static String CHROME_DRIVER_DIRECTORY = "//Users//timmanas//ProgrammingProjects//ProgrammingRecipesSeleniumCucumber//RecipesSeleniumCucumber//src//test//java//resources//drivers//chromedriver";
 }

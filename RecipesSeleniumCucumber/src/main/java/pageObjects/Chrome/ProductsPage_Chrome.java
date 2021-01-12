@@ -25,7 +25,7 @@ public class ProductsPage_Chrome extends BasePage {
 		WaitUntilWebElementIsVisible(voucherCode);
 		String voucherCodeValue = voucherCode.getText();
 		System.out.println("Voucher Code: " + voucherCode.getText());
-		return voucherCodeValue;
+		return voucherCodeValue; 
 	}
 
 }
