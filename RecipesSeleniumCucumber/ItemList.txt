@@ -1,0 +1,18 @@
+List of Items to Tackle
+
+- @Before
+- @After
+- Cucumber Options
+- Hooks Combined with Tags
+- Automation Example
+- Able to Enter into for forms
+- Able to click on Buttons
+- Able to toggle between Tabs
+- Able to verify data
+- DataTable 
+- Scenario Outlines
+- Execute multiple feature files 
+- Execute multiple Runners sequentially using TestNg.xml
+- Execute Test using command line (i.e mvn clean compile test)
+- Add Screenshot capabilities
+- Add Screenshots to Extent Reports
