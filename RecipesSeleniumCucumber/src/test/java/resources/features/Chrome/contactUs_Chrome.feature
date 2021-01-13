@@ -1,6 +1,6 @@
 Feature: Chrome - Submit data to webdriveruniversity.com using contact us form
 
-Scenario: Submit valid data via contact us form
+Scenario: DataTable Example: Submit valid data via contact us form
 	Given I access webdriveruniversity contact us form
 	When I enter a valid firstname
 	When I enter a valid last name

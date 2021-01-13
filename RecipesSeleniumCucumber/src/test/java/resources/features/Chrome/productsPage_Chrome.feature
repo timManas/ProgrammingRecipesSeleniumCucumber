@@ -1,6 +1,6 @@
 Feature: Chrome - Products page
 
-Scenario Outline: validate promo code alert is visible when clicking on the special offers link
+Scenario Outline: ScenarioOutline Example: validate promo code alert is visible when clicking on the special offers link
 	Given user navigates to "<url>" website
 	When user clicks on "<button>"
 	Then user should be presented with a promo alert 

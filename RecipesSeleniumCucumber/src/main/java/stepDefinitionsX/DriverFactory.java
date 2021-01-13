@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
 import pageObjects.Chrome.ContactUsPage_Chrome;
+import pageObjects.Chrome.LoginPage_Chrome;
 import pageObjects.Chrome.ProductsPage_Chrome;
 import utils.Constants;
 
@@ -19,6 +20,7 @@ public class DriverFactory {
 	public static WebDriver driver;
 	public static ContactUsPage_Chrome contactUsPage;
 	public static ProductsPage_Chrome productsPage;
+	public static LoginPage_Chrome loginPage;
 
 	public WebDriver getDriver() {
 		try {
@@ -72,6 +74,7 @@ public class DriverFactory {
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			contactUsPage = PageFactory.initElements(driver, ContactUsPage_Chrome.class);
 			productsPage = PageFactory.initElements(driver, ProductsPage_Chrome.class);
+			loginPage = PageFactory.initElements(driver, LoginPage_Chrome.class);
 		}
 		return driver;
 	}
