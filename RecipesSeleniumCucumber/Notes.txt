@@ -1,4 +1,401 @@
-Flow
+Requirements -----------------------------------
 
-BasePage > ContactUs_Page
-BasePage > Products_Page
+> What do you need to download before starting ?
+- Java SDK
+- Apache Maven
+- Set up Environment variables for Windows  / Set up bash_profile for Mac
+	> JAVA_HOME, M2 ..etc
+- Download TestNG from Eclipse Marketplace
+- Download Cucumber, Natural 0.9
+- Download ChromeDriver 
+
+
+How to -----------------------------------
+1. How to execute ?
+- RightClcik on MainRunner class
+- RunAs: JUnit Test
+
+2. How to run as testNg ?
+- Right click on testng.xml 
+- RunAs: TestNg Test
+
+3. How to run from command line ? 
+- Go to source root of File and type in;
+mvn clean compile test
+
+4. How to create a maven project ? 
+- Go Create new Project
+- Go to "Other.."
+- Go to Maven > Create Maven Project
+- Use Default WorkStation Location > Next
+- Select  GroupId:  org.apache.maven.archetypes with ArtifactId: maven-archetype-quickstart > Next
+- GroupId: com.XYZ
+- ArtifiactId: NameOfApp
+- Package: NameOfApp (Remove com.XYZ)
+- Click on Finish
+
+5. How to test if Maven Project is running correctly /
+- Go to project
+- Right click on project 
+- Run As > Maven  Install
+- If it works, you should see build succcessful
+
+6. How to update Project POM
+- Build Clean first	
+- Right click on the “ProjectName” 
+- Click on Maven > Update Project
+- Click on the Checkbox with “Force Update of Snapshot/Releases’
+- Click Ok
+
+7. How to get install dependencies on pom ?
+- Go to Maven Repository on web ... https://mvnrepository.com/
+- Search for artifacts like Seleneium
+- Select version
+- Copy the Maven code into the pom file
+- Update the Project POM
+
+
+Errors -----------------------------------
+- You are getting "Pending Exception" ?
+Sol: Remove it on the Steps definiition method
+
+
+Notes -----------------------------------
+- When you update the pom file, it downloads the jar files and places it in the .m2 folder
+- If you delete the "repository" folder in the .m2 folder, you can redownload all the jar files by doing the update using Q10. above
+- Flow is:Feature Files > Step Definitions (Java Code) > Selenium > ChromeDriver > Chrome
+- You dont need Cucumber to run Selenium. I automated Selenium without cucumber in the MainNoCucumberRunner.java
+- Run this as java application
+- You should see Selenium running and inputting/outputting commands
+- You can create multiple scenarios inside a feature file
+- You can also seperate scenarios into multiple feature files
+- Feature files need to have keyword: "Feature" at the top 
+
+- When setting the glue, you will need to change it to the name of the Package
+Ex: 
+@CucumberOptions(
+		features = {"src/test/java/WebDriverU/Features/"},
+		glue = {"WebDriverU.steps"},
+		monochrome = true,
+		tags = {}, 
+		plugin = {"pretty", "html:target/cucumber", "html:target/cucumber.json", "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"})
+		
+OR
+
+@CucumberOptions(
+		features = {"src/test/java/CucumberFramework/featureFiles/"},
+		glue = {"CucumberFramework.steps"},
+		monochrome = true,
+		tags = {}, 
+		plugin = {"pretty", "html:target/cucumber", "html:target/cucumber.json", "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"})
+		
+		
+- The "Background" Only applies to the current feature file. Does NOT apply to othe featuer files
+
+- You can parameterize values in the step and it will appear as wild cards in the step definition
+Ex: And I enter a "webdriver123" password		
+This will show us:
+@When("^I enter a \"([^\"]*)\" password$")
+public void i_enter_a_password(String password) throws Throwable {
+	driver.findElement(By.id("password")).sendKeys(password); 
+}
+
+- Looks like creating more than one Step file is not a good idea. Better to make ONE master step file (ex: Steps.java)
+- @Before() Runs before @Before("@TagXYZ"). ALWAYS
+- We can have multiple Runner Classes. But, when we can only run/execute one runner class at a time
+- You can use testNG to execute MULTIPLE runner classes sequentially
+
+
+
+Questions-----------------------------------
+
+Q1. What is automation Framework ? 
+- Guidelines with set of rules of running test automatically
+
+
+Q2. What is TestNG ?
+- Automation Testing Framework
+- Built on top of JUnit
+- Overcomes disadvantages of JUnit
+- Allows user to generate reports
+
+
+Q3. What is Maven ?
+- Build management Tool
+- Allows us to build, compile, verify applications
+- Create Cucumber or automation frameworks
+
+
+Q4. What is the POM File ?
+- XML File
+- Contains info about the project
+- Heart of Maven project
+- List of all dependencies to download from the web to get project running
+- Easily allows us the download project versions
+- When you update the pom file, you will need to re-install the project using "maven install"
+
+
+Q4b. What is dependency ?
+- Tool that allows to manage all libraries in a logical way
+
+
+Q5. What makes TestNG different from JUnit ?
+- TestNG can run test in parallel
+- Support Advanced annotations
+
+
+Q6. What is Gherkin ?
+- Programming language Cucumber understands
+- Business Readable / Domain Specific
+- Describes softwares behaviour without detailing how behaviour is implemented
+
+
+Q7. What is a feature file ? 
+- Capturing Business requirements
+- Contains Gherkin Keywords:
+Feature
+Scenario
+Given
+But
+Then
+And
+
+
+Q8. What is Step definitions ?
+- Java method with an expression that links it to a Gherkin Step
+Ex: 
+Scenario: Some cukes
+  Given I have 48 cukes in my belly
+  
+- 'Given' is a Gherkin keyword, and "I have 48 cukes in my belly" will match the step definition of:
+public class StepDefinitions {
+    @Given("I have {int} cukes in my belly")
+    public void i_have_n_cukes_in_my_belly(int cukes) {
+        System.out.format("Cukes: %n\n", cukes);
+    }
+}
+
+
+Q9. How to create a feature file ?
+- New > File > NameOfFeature.feature  (make sure to add.feature)
+
+
+Q10. What is Runner Class ?
+- Can execute multiple feature files
+- Can also generate customize reports
+- Ability to generate method templates for our step classes
+
+
+Q11. What is glue ? 
+- Middle stage which connects feature files
+- Location of Step Files
+
+
+Q12. What is monochrome ?
+monoChrome - Boolean: - Alters the output of the console window by making it readable or non readable
+
+
+Q13. What are tags ?
+tags - Target specific tests
+
+
+Q14. What are plugins ?
+plugin - Create and develop specific reports (Ex. Html, JSON or Extent report)
+
+
+Q15. Why do we need the @RunWith(Cucumber.class) ?
+- Mandatory for running Cucumber
+
+
+Q16. What is dryRun ?
+dryRun - Boolean: True - Check whether matching steps are visible but will NOT execute the code within the steps
+
+
+Q17. What is a hook ?
+- Blocks of code which that run BEFORE or AFTER each scenario. 
+- REMEMBER: THEY RUN FOR EACH SCENARIO ....
+- Defined by the @Before & @After
+
+Q18. Where is the report located ?
+- target Folder
+- report.html
+
+
+Q19. Cucumber Definitions
+Feature - Description of the feature file
+Background - Defines common steps across multiple scenarios
+	> Allows scenarios to run similar steps for each scenario (ex: Open Browser to the same site)
+	> Reduces code duplication by running each scenario with the Background keyword
+	> Used for Pre-Conditions
+
+Scenario - A feature file can have multiple scenarios
+		> Used to find our scenario amongst multiple scenarios
+Given - Precondition of a scenario
+When - Description of action which will be executed
+Then - Specific outcome from executing the last step
+And - Provides an additional condition to the step
+But - Negative conditions from the last executed Step 
+
+Scenario Outline - Enables data to be sent to scenarios using templates and examples
+Examples - Used alongside Scenario outlines
+
+
+
+Q20. How to toggle between different tabs ? 
+String winHandlerBefore = driver.getWindowHandle()
+for(String winHandler: driver.getWindowHandles()) {
+			driver.switchTo().window(winHandler);
+}
+
+
+Q21.  What are Data Tables ? 
+- Allows user to define multiple data as a table on a given step
+- The Step definition would have a "DataTable" object which can be map out the table
+- Then the step definition can extract the data from the datatable using a
+List<List<String>> data = comments.raw()
+
+
+Q22. What is Scenario Outlines ? 
+- Similar to a FOR LOOP
+- Runs each step with predefined parameters
+- Allows us to run test through each row of data
+- Once row is executed, it runs through the second row until the end 
+- In order to call, you will to be use "<xyz>" and this will refer to the column in the outline
+- Minimizes code duplication and saves time by repeating the steps 
+Note: This requires the use of "Examples:" 
+
+Ex: 
+Scenario Outline: Test Login to account with credentials using ScenarioOutlines
+	Given user navigates to "<url>" 
+	When user clicks on the login portal button
+	And user enters the "<username>" username
+	And user enter the "<password>" password
+	When user clicks on the login button
+	Then the user should be presented with the following prompt alert "<message>"
+	
+	
+	Examples:
+	| 	          url 					| 		username 		|		 password		 |		 message		 |
+	|http://www.webdriveruniversity.com/|	webdriver3			|		wendriver 		 | validation failed     |
+	|http://www.webdriveruniversity.com/|	webdriver			|		webdriver123	 | validation succeeded  |
+	
+
+	
+Q23. What are hooks ?
+- Blocks of code that can run at various points in Cucumber Life Cycle
+- Typically used for setup and teardown of environment befor and after each scenario
+- Enhance our test cases
+- Can attach images to reports using Hooks
+@Before - Gets executed for each scenario
+@After - Gets executed after each scenario
+Multiple types of Hooks
+Scenario Hooks:
+- @Before
+- @After
+
+Step Hooks:
+- @BeforeStep
+- @AfterStep
+
+Conditional Hooks:
+- @After("@browser and not @headless")
+public void doSomethingAfter(Scenario scenario){
+}
+
+
+Q23. What are Cucumber Options ? 
+- Mandatory to have  "@RunWith(XYZ_NameOfClass.class)
+- Settings for the Runner Class
+Ex: 
+@CucumberOptions(
+		features = {"src/test/java/WebDriverU/Features/Login.feature"},				// Location of feature Files
+		glue = {"WebDriverU.steps"},											Í	// Glue - Steo Definitions
+		monochrome = true,
+		tags = {}, 
+		plugin = {"pretty", "html:target/cucumber", "html:target/cucumber.json", "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"})
+
+Note:
+features - Location of feature files
+glue - Location of Step Files
+tags - Target specific tests
+> Filters only the test we want to run ... aka we tag only the scenarios we want to run
+
+dryRun - Boolean: True - Check whether matching steps are visible but will NOT execute the code within the steps
+monoChrome - Boolean: - Alters the output of the console window by making it readable or non readable
+plugin - Create and develop specific reports (Ex. Html, JSON or Extent report)
+
+
+
+Q24. What are Tags ?
+- Enable user to target specific feature files and Scenarios
+- You can combine Tags with Hooks 
+
+
+Q25. Why use testNG to execute ? 
+- Instead of running each RunnerClass individually, we can just run the testng.xml to execute both sequentially
+- Becomes Central point of Execution
+Ex: Go to the Root Folder
+- Right click on testng.xml
+- Run as TestNG.
+> You will see Both runners get executed sequentially
+
+
+Q26. What is the sure-fire plugin for ?
+- The Surefire Plugin is used during the test phase of the maven build lifecycle to execute the unit tests of an application. 
+
+
+Q27. How to execute our testng.xml (which targets multiple runner classes) from the command line:
+1. Set up your pom file to have the following: 
+	<artifactId>maven-surefire-plugin</artifactId>
+	<version>2.22.1</version>
+	<configuration>
+		<suiteXmlFiles>
+			<suiteXmlFile>testng.xml</suiteXmlFile>
+		</suiteXmlFiles>
+		<testErrorIgnore>false</testErrorIgnore>
+		<testFailureIgnore>false</testFailureIgnore>
+	</configuration>
+
+2. Go to Commandline: Go to root Folder and type in:
+mvn clean compile test 
+OR 
+mvn clean compile verify 
+OR 
+mvn clean compile install		(Creates a Jar File. Located in .m2 folder)
+
+Note: This is a mvn command. 
+
+
+
+Q28. What is <suiteXmlFiles> ?
+- List of <suiteXmlFiles> elements specifiying TestNG suite XML file locations.
+
+
+Q29. What is <testFailureIgnore> ?
+Set this to "true" to ignore a failure during testing. Its use is NOT RECOMMENDED, but quite convenient on occasion.
+
+
+
+Q30. How to add screenshot capabilities when we get a failed testcase ? 
+- Here is an example of the code
+	@After
+	public void tearDown(Scenario scenario) throws InterruptedException {
+		try {
+			// Adds Screenshot Capabilities using driver
+			if (driver != null && scenario.isFailed()) {
+				scenario.embed(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png");
+			}
+			
+			if (driver != null) {
+				driver.manage().deleteAllCookies();
+				driver.quit();
+				driver = null;
+			}
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+
+	}
+
+
+

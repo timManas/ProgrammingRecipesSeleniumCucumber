@@ -1,9 +1,8 @@
 List of Items to Tackle
 
 TODO:
-- Execute Test using command line (i.e mvn clean compile test)
-- Add Screenshot capabilities
 - Add Screenshots to Extent Reports
+- How too
 
 Done:
 - Cucumber Options
@@ -17,3 +16,6 @@ Done:
 - Scenario Outlines
 - Execute multiple feature files 
 - Execute multiple Runners sequentially using TestNg.xml
+- Execute Test using command line (i.e mvn clean compile test)
+- Add Screenshot capabilities
+
