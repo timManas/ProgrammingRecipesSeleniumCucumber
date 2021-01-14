@@ -14,6 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 import pageObjects.Chrome.ContactUsPage_Chrome;
 import pageObjects.Chrome.LoginPage_Chrome;
 import pageObjects.Chrome.ProductsPage_Chrome;
+import pageObjects.Chrome.TodoPage_Chrome;
 import utils.Constants;
 
 public class DriverFactory {
@@ -21,6 +22,7 @@ public class DriverFactory {
 	public static ContactUsPage_Chrome contactUsPage;
 	public static ProductsPage_Chrome productsPage;
 	public static LoginPage_Chrome loginPage;
+	public static TodoPage_Chrome todoPage;
 
 	public WebDriver getDriver() {
 		try {
@@ -30,8 +32,6 @@ public class DriverFactory {
 			properties.load(fi);
 
 			String browserName = properties.getProperty("browser");
-			System.out.println("BrowserName: " + browserName);
-
 			switch (browserName) {
 
 			case "firefox":
@@ -75,6 +75,7 @@ public class DriverFactory {
 			contactUsPage = PageFactory.initElements(driver, ContactUsPage_Chrome.class);
 			productsPage = PageFactory.initElements(driver, ProductsPage_Chrome.class);
 			loginPage = PageFactory.initElements(driver, LoginPage_Chrome.class);
+			todoPage = PageFactory.initElements(driver, TodoPage_Chrome.class);
 		}
 		return driver;
 	}

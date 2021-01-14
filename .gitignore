@@ -1,2 +1,5 @@
 target/
 .metadata/
+/target/
+**/.metadata
+**/.classpath

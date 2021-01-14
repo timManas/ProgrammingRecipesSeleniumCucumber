@@ -54,6 +54,13 @@ mvn clean compile test
 - Copy the Maven code into the pom file
 - Update the Project POM
 
+8. How to add new functionality ?
+- Create new feature File
+- Run Feature file to get the step definitions
+- Create new StepDefinition File and placed Step definitions there
+- Create new pageObject class
+- Add new PageObject to the DriverFactory
+
 
 Errors -----------------------------------
 - You are getting "Pending Exception" ?

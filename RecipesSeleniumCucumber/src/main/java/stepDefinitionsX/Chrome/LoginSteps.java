@@ -22,7 +22,7 @@ public class LoginSteps extends DriverFactory {
 		loginPage.enterFirstName("webdriver");
 	}
 
-	@When("^I enter a \"([^\"]*)\" password$")
+	@When("^I enter a \"(.*)\" password$")
 	public void i_enter_a_password(String password) throws Throwable {
 		loginPage.enterPassword(password);
 	}
@@ -42,7 +42,7 @@ public class LoginSteps extends DriverFactory {
 		loginPage.verifyValidationAlert("validation failed");
 	}
 
-	@Given("^user navigates to \"([^\"]*)\"$")
+	@Given("^user navigates to \"(.*)\"$")
 	public void user_navigates_to(String url) throws Throwable {
 		loginPage.userNavigatesTo(url);
 	}
@@ -52,12 +52,12 @@ public class LoginSteps extends DriverFactory {
 		loginPage.clickOnLoginPortalLink();
 	}
 
-	@When("^user enters the \"([^\"]*)\" username$")
+	@When("^user enters the \"(.*)\" username$")
 	public void user_enters_the_username(String name) throws Throwable {
 		loginPage.enterFirstName(name);
 	}
 
-	@When("^user enter the \"([^\"]*)\" password$")
+	@When("^user enter the \"(.*)\" password$")
 	public void user_enter_the_password(String passwordX) throws Throwable {
 		loginPage.enterPassword(passwordX);
 	}
@@ -67,7 +67,7 @@ public class LoginSteps extends DriverFactory {
 		loginPage.clickOnLoginPortalButton();
 	}
 
-	@Then("^the user should be presented with the following prompt alert \"([^\"]*)\"$")
+	@Then("^the user should be presented with the following prompt alert \"(.*)\"$")
 	public void the_user_should_be_presented_with_the_following_prompt_alert(String message) throws Throwable {
 		loginPage.verifyValidationAlert(message);
 	}
