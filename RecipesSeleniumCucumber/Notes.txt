@@ -1,3 +1,12 @@
+Flow
+
+MainRunner > Feature File > Step Definition > Page Objects
+
+
+DriverFactor > BasePage     > Pages (ie. LoginPage_Chrome, TodoPage_Chrome ...etc)
+			 > MasterHook
+			 
+
 Requirements -----------------------------------
 
 > What do you need to download before starting ?
