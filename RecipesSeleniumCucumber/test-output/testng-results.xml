@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="2" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-12T04:22:03Z" name="ProgrammingRecipes Selenium Cucmber" finished-at="2021-01-12T04:22:14Z" duration-ms="11415">
+  <suite name="ProgrammingRecipes Selenium Cucmber" duration-ms="20794" started-at="2021-01-17T22:41:30Z" finished-at="2021-01-17T22:41:51Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@343570b7]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@69ea3742]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2021-01-12T04:22:03Z" name="Recipes Selenium Cucmber" finished-at="2021-01-12T04:22:14Z" duration-ms="11415">
+    <test name="Recipes Selenium Cucmber" duration-ms="20794" started-at="2021-01-17T22:41:30Z" finished-at="2021-01-17T22:41:51Z">
       <class name="runners.MainRunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runners.MainRunner@343570b7]" started-at="2021-01-11T23:22:03Z" name="setUpClass" finished-at="2021-01-11T23:22:03Z" duration-ms="205" status="PASS">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.MainRunner@69ea3742]" name="setUpClass" is-config="true" duration-ms="302" started-at="2021-01-17T17:41:30Z" finished-at="2021-01-17T17:41:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@343570b7]" started-at="2021-01-11T23:22:03Z" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-01-11T23:22:09Z" duration-ms="6218" status="PASS">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@69ea3742]" name="feature" duration-ms="20024" started-at="2021-01-17T17:41:31Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-01-17T17:41:51Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Chrome - Submit data to webdriveruniversity.com using contact us form]]>
+                <![CDATA[Chrome - Verify the Popup Page]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@343570b7]" started-at="2021-01-11T23:22:09Z" name="feature" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-01-11T23:22:14Z" duration-ms="4561" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome - Products page]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.MainRunner@343570b7]" started-at="2021-01-11T23:22:14Z" name="tearDownClass" finished-at="2021-01-11T23:22:14Z" duration-ms="336" status="PASS">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.MainRunner@69ea3742]" name="tearDownClass" is-config="true" duration-ms="364" started-at="2021-01-17T17:41:51Z" finished-at="2021-01-17T17:41:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
