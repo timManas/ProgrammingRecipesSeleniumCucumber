@@ -20,6 +20,14 @@ Requirements -----------------------------------
 
 
 How to -----------------------------------
+
+0. Cannot execute ? 
+- Delete all the folders inside .m2 
+- Delete target folder
+- Run "clean"
+- Run Maven "Force Update on Snapshots/Releases"
+- Right click on MainRunner.java > Run as "JUnit Test"
+
 1. How to execute ?
 - RightClcik on MainRunner class
 - RunAs: JUnit Test
