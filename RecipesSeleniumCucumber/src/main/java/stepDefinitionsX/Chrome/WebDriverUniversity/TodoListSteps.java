@@ -1,4 +1,4 @@
-package stepDefinitionsX.Chrome;
+package stepDefinitionsX.Chrome.WebDriverUniversity;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

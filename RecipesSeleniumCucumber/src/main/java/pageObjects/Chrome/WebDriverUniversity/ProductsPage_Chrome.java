@@ -1,4 +1,4 @@
-package pageObjects.Chrome;
+package pageObjects.Chrome.WebDriverUniversity;
 
 import java.io.IOException;
 import org.openqa.selenium.WebElement;

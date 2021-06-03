@@ -1,4 +1,4 @@
-package stepDefinitionsX.Chrome;
+package stepDefinitionsX.Chrome.WebDriverUniversity;
 
 import java.io.IOException;
 import cucumber.api.DataTable;
@@ -6,7 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pageObjects.Chrome.ContactUsPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.ContactUsPage_Chrome;
 import stepDefinitionsX.DriverFactory;
 
 public class ContactUsSteps extends DriverFactory {

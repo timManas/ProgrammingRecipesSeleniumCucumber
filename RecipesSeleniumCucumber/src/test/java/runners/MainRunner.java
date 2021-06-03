@@ -9,7 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-		features = { "src/test/java/resources/features/Chrome/nasdaqHome_Chrome.feature" }, 
+		features = { "src/test/java/resources/features/Chrome/" }, 
 		glue = {"stepDefinitionsX" }, 
 		monochrome = true, 
 		tags = {}, 

@@ -11,11 +11,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
-import pageObjects.Chrome.ContactUsPage_Chrome;
-import pageObjects.Chrome.LoginPage_Chrome;
-import pageObjects.Chrome.PopupAlertsPage_Chrome;
-import pageObjects.Chrome.ProductsPage_Chrome;
-import pageObjects.Chrome.TodoPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.ContactUsPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.LoginPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.PopupAlertsPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.ProductsPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.TodoPage_Chrome;
 import utils.Constants;
 
 public class DriverFactory {

@@ -1,4 +1,4 @@
-package pageObjects.Chrome;
+package pageObjects.Chrome.WebDriverUniversity;
 
 import static org.testng.Assert.assertEquals;
 

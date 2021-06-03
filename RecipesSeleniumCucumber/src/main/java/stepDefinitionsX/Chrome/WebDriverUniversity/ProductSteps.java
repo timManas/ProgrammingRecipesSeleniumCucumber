@@ -1,4 +1,4 @@
-package stepDefinitionsX.Chrome;
+package stepDefinitionsX.Chrome.WebDriverUniversity;
 
 import java.io.IOException;
 import org.openqa.selenium.By;
@@ -6,7 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pageObjects.BasePage;
-import pageObjects.Chrome.ProductsPage_Chrome;
+import pageObjects.Chrome.WebDriverUniversity.ProductsPage_Chrome;
 import stepDefinitionsX.DriverFactory;
 
 public class ProductSteps extends DriverFactory {

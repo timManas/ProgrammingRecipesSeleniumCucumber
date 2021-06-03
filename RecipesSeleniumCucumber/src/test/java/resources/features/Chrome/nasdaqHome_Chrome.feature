@@ -2,16 +2,16 @@ Feature: Chrome - Verify Elements on HomePage
 
 Background: 
 	Given I access nasdaq homepage
-
+	
+Scenario: Find a Symbol
+	Given I enter a symbol "AAPL"
+	Then User is taken to Page
+	
 Scenario: Verify Elements in Navbar HomePage
 	Given Fetch the list of elements in Market Activity
 	And Fetch the list of elements in News + Insights
 	And Fetch the list of elements in Solutions
 	And Fetch the list of elements in About
-	
-Scenario: Find a Symbol
-	Given I enter a symbol "AAPL"
-	Then verify user is taken to Page
 	
 Scenario: Verify Just In
 	Given I click on the Just In
@@ -23,7 +23,7 @@ Scenario: Verify Top Reads
 	
 Scenario: Verify Latest News
 	Given User is able to click on the 2nd particle in Latest News
-	Then User is takent to Article for latest News
+	Then User is taken to Article for latest News
 	
 Scenario: Verify Upcoming Market Events
 	Given User is able to click on the Dividends
