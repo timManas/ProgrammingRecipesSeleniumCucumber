@@ -19,16 +19,26 @@ Requirements -----------------------------------
 - Download ChromeDriver 
 
 
-How to -----------------------------------
+TROUBLESHOOTING -----------------------------------
 
-0. Cannot execute ? 
+1. CANT EXECUTE ? 
 - Delete all the folders inside .m2 
 - Delete target folder
 - Run "clean"
 - Run Maven "Force Update on Snapshots/Releases"
 - Right click on MainRunner.java > Run as "JUnit Test"
 
+
+How to -----------------------------------
+
+NOTE: Setup before Running
+- SET THE WORKSPACE AS TOP LEVEL FOLDER
+- In this case it is "/Users/timmanas/ProgrammingProjects/Java/ProgrammingRecipesSeleniumCucumber"
+- Then open the Maven project from "RecipesSeleniumCucumber"
+
+
 1. How to execute ?
+- Run Clean, Force Update on Snapshot/Releases
 - RightClcik on MainRunner class
 - RunAs: JUnit Test
 
@@ -66,7 +76,7 @@ mvn clean compile test
 
 7. How to get install dependencies on pom ?
 - Go to Maven Repository on web ... https://mvnrepository.com/
-- Search for artifacts like Seleneium
+- Search for artifacts like Selenium
 - Select version
 - Copy the Maven code into the pom file
 - Update the Project POM
@@ -81,7 +91,7 @@ mvn clean compile test
 
 Errors -----------------------------------
 - You are getting "Pending Exception" ?
-Sol: Remove it on the Steps definiition method
+Sol: Remove it on the Steps definition method
 
 
 Notes -----------------------------------
@@ -420,6 +430,7 @@ Q30. How to add screenshot capabilities when we get a failed testcase ?
 		}
 
 	}
+
 
 
 
