@@ -28,6 +28,13 @@ TROUBLESHOOTING -----------------------------------
 - Run Maven "Force Update on Snapshots/Releases"
 - Right click on MainRunner.java > Run as "JUnit Test"
 
+2. If App cannot find the Cucumber StepDefinitions via "glue", try typing in
+glue = {""}
+2. If App cannot find the Cucumber feature files:
+a. start from 'src/test/java'
+b. Removing the starting '/'
+
+
 
 How to -----------------------------------
 
@@ -139,7 +146,16 @@ public void i_enter_a_password(String password) throws Throwable {
 - We can have multiple Runner Classes. But, when we can only run/execute one runner class at a time
 - You can use testNG to execute MULTIPLE runner classes sequentially
 
+- MAKE SURE YOU BUILD YOUR FOLDER STRUCTURE PROPERLY ...
+- The Feature Files must NOT contain a starting "/"
+Ex:
+GOOD: src/test/java/WebUIAutomation/resources/features
+BAD:  /src/test/java/WebUIAutomation/resources/features
 
+**Why ?**
+- Take a look at the MainRunner.java
+- The glue is "", i think its because we have "WebUIAutomation" folder present when ITS NOT suppose  to be
+	> Compare this to the ProgrammingRecipesSeleniumCucumber Project.
 
 Questions-----------------------------------
 
