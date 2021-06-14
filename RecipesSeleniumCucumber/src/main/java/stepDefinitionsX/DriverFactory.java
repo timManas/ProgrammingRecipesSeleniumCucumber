@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import pageObjects.Chrome.Nasdaq.HomePage_Chrome;
 import pageObjects.Chrome.WebDriverUniversity.ContactUsPage_Chrome;
 import pageObjects.Chrome.WebDriverUniversity.LoginPage_Chrome;
 import pageObjects.Chrome.WebDriverUniversity.PopupAlertsPage_Chrome;
@@ -26,6 +27,7 @@ public class DriverFactory {
 	public static LoginPage_Chrome loginPage;
 	public static TodoPage_Chrome todoPage;
 	public static PopupAlertsPage_Chrome popUpAlertsPage;
+	public static HomePage_Chrome homePage;
 
 	public WebDriver getDriver() {
 		try {
@@ -93,6 +95,7 @@ public class DriverFactory {
 			loginPage = PageFactory.initElements(driver, LoginPage_Chrome.class);
 			todoPage = PageFactory.initElements(driver, TodoPage_Chrome.class);
 			popUpAlertsPage = PageFactory.initElements(driver, PopupAlertsPage_Chrome.class);
+			homePage = PageFactory.initElements(driver, HomePage_Chrome.class);
 		}
 		return driver;
 	}

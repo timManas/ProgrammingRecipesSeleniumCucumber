@@ -3,15 +3,31 @@ package stepDefinitionsX.Chrome.Nasdaq;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import stepDefinitionsX.DriverFactory;
 
-public class NasdaqHomeSteps {
+public class NasdaqHomeSteps extends DriverFactory {
 	
 	@Given("^I access nasdaq homepage$")
 	public void i_access_nasdaq_homepage() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    homePage.getHomePage();
 	}
 
+	@Given("^I enter a symbol \"([^\"]*)\"$")
+	public void i_enter_a_symbol(String symbol) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    homePage.enterSymbol(symbol);
+	}
+	
+	@Given("^User clicks on Symbol Button$")
+	public void user_clicks_on_Symbol_Button() throws Throwable {
+	    homePage.clicksOnFindSymbolButton();
+	}
+
+	@Then("^User is taken to Page$")
+	public void user_is_taken_to_Page() throws Throwable {
+	    homePage.verifyDataOnSymbolPage();
+	}
+	
 	@Given("^Fetch the list of elements in Market Activity$")
 	public void fetch_the_list_of_elements_in_Market_Activity() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
@@ -32,18 +48,6 @@ public class NasdaqHomeSteps {
 
 	@Given("^Fetch the list of elements in About$")
 	public void fetch_the_list_of_elements_in_About() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
-
-	@Given("^I enter a symbol \"([^\"]*)\"$")
-	public void i_enter_a_symbol(String arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
-	}
-
-	@Then("^User is taken to Page$")
-	public void user_is_taken_to_Page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new PendingException();
 	}

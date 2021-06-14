@@ -52,6 +52,7 @@ public class ContactUsPage_Chrome extends BasePage{
 	
 	public ContactUsPage_Chrome clickOnSubmiButton() throws Exception {
 		waitAndClickElement(button_Submit);
+		Thread.sleep(3000);	
 		return new ContactUsPage_Chrome();
 	}
 	
