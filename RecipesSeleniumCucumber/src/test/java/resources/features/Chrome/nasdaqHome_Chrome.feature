@@ -8,6 +8,7 @@ Scenario: Find a Symbol
 	Given User clicks on Symbol Button
 	Then User is taken to Page
 	
+	
 #Scenario: Verify Elements in Navbar HomePage
 #	Given Fetch the list of elements in Market Activity
 #	And Fetch the list of elements in News + Insights
