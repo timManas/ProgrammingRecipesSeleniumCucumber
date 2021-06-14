@@ -36,7 +36,6 @@ public class HomePage_Chrome extends BasePage{
 	}
 
 	public HomePage_Chrome verifyDataOnSymbolPage() throws IOException {
-		// TODO Auto-generated method stub
 		System.out.println("Text: " + symbolName.getText());
 		Assert.assertEquals("Apple Inc. Common Stock (AAPL)", symbolName.getText());
 		
