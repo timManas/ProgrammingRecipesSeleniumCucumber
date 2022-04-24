@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -55,6 +56,18 @@ public class DriverFactory {
 					System.out.println("Opening Chrome");
 					System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_DIRECTORY);
 					// CHROME OPTIONS
+					
+					// Add the following to avoid detection 
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36");
+					options.addArguments("--disable-extensions");
+					options.addArguments("--profile-directory=Default");
+					options.addArguments("--incognito");
+					options.addArguments("--disable-plugins-discovery");
+					options.addArguments("--start-maximized");
+					options.addArguments("--disable-blink-features=AutomationControlled");    // This will prevent website from detecting the window is automated
+		
+					
 					driver = new ChromeDriver();
 					System.out.println("Driver: " + driver);
 					driver.manage().window().maximize();
